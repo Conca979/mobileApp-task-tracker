@@ -76,7 +76,7 @@ fun TaskTrackerApp(context: Context) {
             jsonArray.put(jsonObject)
         }
         sharedPreferences.edit().putString("tasks", jsonArray.toString()).apply()
-        tasks = updatedTasks.toList() // Trigger recomposition
+        tasks = updatedTasks.toMutableList() // Trigger recomposition
     }
 
     Scaffold(
